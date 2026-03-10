@@ -61,7 +61,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t fastapi-gitops-starter . [cite_start]#
+        run: docker build -f docker/Dockerfile -t fastapi-gitops-starter .
 
       - name: Tag and Push (Release only)
         if: github.event_name == 'release'
